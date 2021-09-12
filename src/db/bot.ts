@@ -1,9 +1,11 @@
-import { Schema, model } from 'mongoose';
+import { Document, Schema, model } from 'mongoose';
 
-interface Bot {
+interface Bot extends Document {
   name: string;
   refresh_token?: string;
 }
+
+
 const BotSchema = new Schema<Bot>({
   name: {
     type: String,
@@ -18,5 +20,9 @@ const BotSchema = new Schema<Bot>({
   versionKey: false
 });
 
+
+
 const botModel = model<Bot>('bot', BotSchema);
-module.exports = botModel;
+
+
+export { botModel };

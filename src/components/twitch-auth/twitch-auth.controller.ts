@@ -7,7 +7,7 @@ import axios, { AxiosInstance } from 'axios';
 import * as responsehandler from '../../lib/response-handler';
 import ApiError from '../../abstractions/ApiError';
 import BaseApi from '../BaseApi';
-import botModel = require('../../db/bot');
+import { botModel } from '../../db/bot';
 
 /**
  * Twitch controller
@@ -72,10 +72,12 @@ export default class TwitchAuthController extends BaseApi {
         grant_type: 'authorization_code',
         redirect_uri: this.redirect_uri
       });
-      // const bot = await botModel.findOneAndUpdate({ name : 'fabkerbot' }, { name : 'fabkerbot' }, { upsert: true });
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const bot: any = await botModel.findOneAndUpdate({ name: 'fabkerbot' }, { name: 'fabkerbot' }, { upsert:true });
       const response = await this.authAPI.post(`/token?${qs}`);
-      // eslint-disable-next-line no-console
+      bot.refresh_token = response.data.refresh_token;
+      bot.save();
       
       res.json(response.data);
     } catch (err) {
