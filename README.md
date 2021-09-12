@@ -40,7 +40,6 @@ Try it!! I am happy to hear your feedback or any kind of new features.
 
 ## Start The application in Development Mode
 
-- Clone the Application `git clone https://github.com/santoshshinde2012/node-boilerplate.git`
 - Install the dependencies `npm install`
 - Start the application `npm start`
 
@@ -68,9 +67,6 @@ Try it!! I am happy to hear your feedback or any kind of new features.
 | **tests/unit-tests/**             | Unit Test cases will be placed here  |
 | **tests/integration-tests/**      | API routes (Integration) Test cases will be placed here|
 
-## Workflow
-
-![Workflow](https://github.com/santoshshinde2012/node-boilerplate/blob/master/wiki/boilerplate-workflow.png?raw=true)
 
 ## Encryption
 
@@ -118,9 +114,3 @@ chmod ug+x .git/hooks/*
 - Ensure your dependencies are secure
 - Avoid other known vulnerabilities
 - Additional considerations
-
-
-
-<hr/>
-
-# Please connect with me on Twitter [@shindesan2012](https://twitter.com/shindesan2012) & [https://blog.santoshshinde.com](https://blog.santoshshinde.com/)
